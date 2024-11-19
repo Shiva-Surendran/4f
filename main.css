@@ -328,8 +328,51 @@ section {
 .top-navbar a:hover {
   background-color: #555;
 }
+@media (max-width: 760px) and (min-width: 360px) {
+  .mainpage {
+    margin-left: 0;
+    width: 100%;
+    overflow-x: hidden; 
+  }
+}
 
+.projectbutton {
+  display: none;
+}
 @media (max-width: 768px) {
+  .projectbutton {
+    display: block;
+    background-color: #24b029;
+    color: #fff;
+    font-size: 26px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px auto;
+  }
+
+  .projectbutton:hover {
+    background-color: #1d8b1d;
+  }
+}
+.projectbutton a {
+  text-decoration: none; /* Remove underline from the link */
+  color: white; /* Make the link text white */
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 760px) and (min-width: 360px) {
+  /* Customize styles for devices like the OnePlus 12 R */
+
   .sidebar {
     display: none;
   }
@@ -343,215 +386,147 @@ section {
     width: 100%;
   }
 
-  .navbar {
-    display: none;
-  }
-
   .top-navbar {
     display: block;
   }
 
-  .about {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .image-left, .image-right {
-    min-width: 100%;
-    padding: 10px;
-  }
-
-  .text {
-    padding: 10px;
-    max-width: 100%;
-  }
-
-  .text h2 {
-    font-size: 1.5em;
-  }
-
-  .text p {
-    font-size: 1em;
-  }
-
-  .bar {
-    padding: 20px;
-    flex-direction: column;
-  }
-
-  .bar .barh1 {
-    font-size: 2em;
-  }
-
-  .bar .bar-description {
-    font-size: 1em;
-  }
-
-  .contact-info {
-    padding: 20px;
-    background-color: #f5f5f5;
-    box-shadow: none;
-  }
-
-  .contact-info .texthead {
-    font-size: 1em;
-  }
-
-  .contact-info .text {
-    font-size: 1.2em;
-  }
-}
-
-@media (max-width: 480px) {
-  .top-navbar a {
-    font-size: 14px;
-    padding: 8px 10px;
-  }
-
-  .text h2 {
-    font-size: 1.2em;
-  }
-
-  .text p {
-    font-size: 0.9em;
-  }
-
-  .bar .barh1 {
-    font-size: 1.5em;
-  }
-
-  .bar .bar-description {
-    font-size: 0.8em;
-  }
-
-  .contact-info .texthead {
-    font-size: 1em;
-  }
-
-  .contact-info .text {
-    font-size: 1.2em;
-  }
-
   @media (max-width: 768px) {
-    .team {
-      padding: 20px;
-      background-color: #f5f5f5;
-    }
-
-    .team h1 {
-      font-size: 1.8em;
-      margin-bottom: 15px;
-      text-align: center;
-    }
-
-    .team-container {
-      display: flex;
+    .about {
       flex-direction: column;
       align-items: center;
-      gap: 20px;
     }
 
-    .team-member {
-      text-align: center;
-      font-size: 1.5em;
-      color: #333;
-      font-weight: bold;
-      font-family: 'Poppins', sans-serif;
-      width: 80%;
-      max-width: 300px;
-      margin: 0 auto;
-    }
-
-    .team-member img {
+    .aboutleft, .aboutright {
       width: 100%;
-      height: auto;
-      max-width: 120px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
-    .team-member p {
-      margin-top: 10px;
-      font-size: 0.9em;
-      font-family: 'Poppins';
+    /* Change order for small screens */
+    .aboutleft {
+      order: 2;
     }
-  }
 
-  @media (max-width: 480px) {
-    .team h1 {
+    .aboutright {
+      order: 1;
+    }
+
+    .image-left, .image-right {
+      min-width: 100%;
+      padding: 10px;
+    }
+
+    .text {
+      padding: 10px;
+      max-width: 100%;
+    }
+
+    .text h2 {
+      font-size: 2.9em;
+    }
+
+    .text p {
       font-size: 1.5em;
     }
 
-    .team-member {
-      width: 90%;
-      max-width: 250px;
-    }
-
-    .team-member img {
-      max-width: 100px;
-    }
-
-    .team-member p {
-      color: #f1f1f1;
-      font-size: 1.0em;
-    }
-  }
-
-  @media (max-width: 768px) {
-    footer {
-      padding: 20px;
-      background-color: #111;
-    }
-
-    .footer-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-
-    .image-logo {
-      margin-bottom: 5px;
-    }
-
-    .image-logo img {
-      width: 80px;
-    }
-
-    .footer-info {
-      margin-top: 10px;
-    }
-
-    .footer-info span, .footer-info p {
-      font-size: 14px;
-    }
-  }
-
-  @media (max-width: 768px) {
     .bar {
       padding: 20px;
       flex-direction: column;
-      text-align: center;
+    }
+
+    .bar .barh1 {
+      font-size: 2em;
+    }
+
+    .bar .bar-description {
+      font-size: 1em;
     }
 
     .contact-info {
-      width: 100%;
-      padding: 10px;
-      font-size: 16px;
-      background-color: #114b5f;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    }
-
-    .contact-info .info-group {
-      margin-bottom: 15px;
+      padding: 15px; /* Reduced padding */
+      background-color: #000000;
+      box-shadow: none;
     }
 
     .contact-info .texthead {
-      font-size: 1.2em;
+      font-size: 22px; /* Reduced font size */
     }
 
     .contact-info .text {
-      font-size: 1em;
+      font-size: 19px; 
     }
   }
+
+  .team {
+    padding: 20px;
+    background-color: #580000;
+  }
+
+  .team h1 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .team-container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .team-member {
+    text-align: center;
+    font-size: 1.8em;
+    color: #ffffff;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    width: 30%;  
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .team-member img {
+    width: 100%;
+    height: auto;
+    max-width: 120px;
+    max-height: 120px;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .team-member p {
+    margin-top: 10px;
+    font-size: 0.6em;
+    font-family: 'Poppins';
+  }
+
+  footer {
+    padding: 20px;
+    background-color: #111;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .image-logo {
+    margin-bottom: 5px;
+  }
+
+  .image-logo img {
+    width: 80px;
+  }
+
+  .footer-info {
+    margin-top: 10px;
+  }
+
+  .footer-info span, .footer-info p {
+    font-size: 14px;
+  }
 }
+
+
+
