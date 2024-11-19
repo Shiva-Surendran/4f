@@ -1,244 +1,80 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slideshow</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 
-body {
-  font-family: "Poppins", sans-serif;
-}
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="logo2">
+          <img src="ss.png" alt="4f">
+        </div>
+        <ul class="nav-links">
+          <li><a href="web.html">Home</a></li>
+          <li><a href="web.html">About us</a></li>
+          <li><a href="project.html">Projects</a></li>
+          <li><a href="web.html">Team</a></li>
+          <li><a href="web.html">Contact us</a></li>
+        </ul>
+      </nav>
 
-.slideshow {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-left: 170px;
-  width: 100%;
-  height: 100vh;
-  overflow: scroll;
-  position: relative;
-  background-color: #324a5f;
-}
+  <div class="slideshow">
+    <div class="image-container">
+      <img src="p.png" alt="Slideshow Image" id="slideshow-image">
+    </div>
 
-.image-container {
-  align-items: center;
-  justify-content: right;
-  margin-top: 20px;
-  width: 1000px;
-  height: 445px;
-  margin-bottom: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+    <div class="text-container">
+      <div class="image-text">
+        <table>
+          <thead>
+            <tr>
+              <th colspan="2">Project Details</th>
+            </tr>
+          </thead>
+          <tbody id="image-details">
+            <tr>
+              <td>Project Name</td>
+              <td>Double Storage House 2450 Sq. Feet</td>
+            </tr>
+            <tr>
+              <td>Client</td>
+              <td>Mr.Kunjumon N.R</td>
+            </tr>
+            <tr>
+              <td>Project Consultant</td>
+              <td>4f Builders</td>
+            </tr>
+            <tr>
+              <td>Project Value</td>
+              <td>59 Lakhs</td>
+            </tr>
+            <tr>
+              <td>Project Duration</td>
+              <td>13 months</td>
+            </tr>
+            <tr>
+              <td>Location</td>
+              <td>Keerukuzhi, Thumpamon, Pathanamthitta</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-.logo2 img {
-  width: 150px;
-  height: 120px;
-  margin: 20px 0px;
-}
+    <div class="controls">
+      <button onclick="prevImage()">Previous</button>
+      <button onclick="nextImage()">Next</button>
+      <a href="web.html"><button class="projectbutton">Back to main page</button></a></div>
 
-img {
-  width: 1000px;
-  height: 450px;
-  border-radius: 10px;
-}
+    </div>
+  </div>
 
-.text-container {
-  width: 1000px;
-  margin-bottom: 10px;
-}
-
-.image-text {
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  font-family: "Poppins", sans-serif;
-}
-
-.image-text table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.image-text th,
-.image-text td {
-  border: 1px solid white;
-  padding: 10px;
-  font-size: 16px;
-  width: 120px;
-}
-
-.controls {
-  bottom: 10px;
-  top: 650px;
-}
-
-button {
-  margin: 0 10px;
-  padding: 10px 20px;
-  background-color: #1B262C;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 18px;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #4a5568;
-}
-
-.sidebar {
-  width: 250px;
-  height: 100vh;
-  background-color: #333;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: fixed;
-  left: 0;
-  font-size: 25px;
-  z-index: 10;
-}
-
-.sidebar2 {
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100vh;
-  width: 250px;
-  z-index: 999px;
-  background-color: #333;
-  display: none;
-  flex-direction: column;
-  backdrop-filter: blur(10px);
-}
-
-.logo img {
-  width: 150px;
-  margin: 20px 0;
-}
-
-.nav-links {
-  list-style: none;
-  padding: 0;
-  width: 100%;
-}
-
-.nav-links li {
-  width: 100%;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #fff;
-  display: block;
-  padding: 15px 20px;
-  width: 100%;
-  text-align: left;
-}
-
-.nav-links a:hover {
-  color: #666;
-}
-
-/* Mobile responsive */
-@media (max-width: 768px) {
-  .slideshow {
-    padding-left: 0; /* Remove padding on smaller screens */
-  }
-
-  .image-container {
-    width: 100%;
-    height: 100%; /* Make image container responsive */
-  }
-
-  img {
-    width: 100%;
-    height: 100%; /* Scale the image to fit the container */
-  }
-
-  .text-container {
-    width: 100%;
-    padding: 10px; /* Add padding for text container */
-  }
-
-  .image-text {
-    padding: 5px;
-    font-size: 14px; /* Reduce font size for mobile */
-  }
-
-  .image-text th,
-  .image-text td {
-    padding: 8px;
-    font-size: 18px; 
-    width: auto; 
-  }
-
-  .controls {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-  }
-
-  button {
-    width: 100%;
-    padding-top:10px;
-    font-size: 16px; 
-     display: block;
-    color: #fff;
-    font-size: 16px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 20px auto;
-  } 
-
-  .sidebar {
-    display: none;
-
-  .sidebar2 {
-    display: flex; /* Show sidebar2 (new responsive sidebar) */
-    width: 200px; /* Make the sidebar smaller */
-    top: 0;
-    right: 0;
-  }
-
-  .logo img {
-    width: 100px;
-  }
-
-  .nav-links a {
-    font-size: 16px; /* Make the menu items smaller */
-    padding: 12px 15px;
-  }
-
-}
-
-
-
-.projectbutton {
-  display: none;
-}
-@media (max-width: 768px) {
-  .projectbutton {
-    display: block;
-    color: #fff;
-    font-size: 16px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 20px auto;
-  }
-
-
-}
-.projectbutton a {
-  text-decoration: none; 
-}
-}
+  <script src="scripts.js"></script>
+</body>
+</html>
